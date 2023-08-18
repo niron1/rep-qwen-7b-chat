@@ -43,6 +43,7 @@ def stream_search(needles, streamer):
     defeat_initial_spaces = DefeatInitialSpaces()
     stream_tag_remover = StreamTagRemover(needles)
     for chunk in streamer:
+        print("raw llm output:",chunk)
         for tok in stream_tag_remover.process_chunk(chunk):
             tok1 = defeat_initial_spaces.process(tok)
             if tok1 != '':
