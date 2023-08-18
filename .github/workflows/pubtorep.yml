@@ -104,7 +104,8 @@ jobs:
       - name: Remove files batch 6
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/lib/llvm-12
 
-# /usr/lib/llvm-13
+      - name: Remove files batch 7
+        run: /usr/bin/sudo /usr/bin/rm -rf /usr/lib/llvm-13 /usr/lib/jvm /usr/lib/php /usr/lib/google-cloud-sdk /opt/microsoft
 
       - name: Check disk space again
         run: /usr/bin/df -h
