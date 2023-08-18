@@ -14,9 +14,6 @@ jobs:
       - name: Check disk space
         run: /usr/bin/df -h
 
-#      - name: Check big folders as candidate for deletion
-#        run: /usr/bin/sudo /usr/bin/du -BM --max-depth=3 / 2>&1 | awk '$1+0 >= 10 {print}'
-
       - name: Erase apt lists
         run: /usr/bin/sudo /usr/bin/rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -106,6 +103,10 @@ jobs:
 
       - name: Remove files batch 7
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/lib/llvm-13 /usr/lib/jvm /usr/lib/php /usr/lib/google-cloud-sdk /opt/microsoft
+
+      - name: Check big folders as candidate for deletion
+        run: /usr/bin/sudo /usr/bin/du -BM --max-depth=3 / 2>&1 | awk '$1+0 >= 100 {print}'
+
 
       - name: Check disk space again
         run: /usr/bin/df -h
