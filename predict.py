@@ -48,7 +48,7 @@ class Predictor(BasePredictor):
         thread.start()
         counter = len(trimmed_prompt)
         prompt_still_running = True
-        for new_text in stream_search(['<s>','</s>'],streamer):
+        for new_text in stream_search(['<|endoftext|>'],streamer):
             if prompt_still_running:
                 counter -= len(new_text)
                 if counter <= 0:
