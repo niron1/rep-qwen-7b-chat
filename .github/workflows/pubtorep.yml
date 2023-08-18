@@ -104,8 +104,12 @@ jobs:
       - name: Remove files batch 7
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/lib/llvm-13 /usr/lib/jvm /usr/lib/php /usr/lib/google-cloud-sdk /opt/microsoft
 
-      - name: Check big folders as candidate for deletion
-        run: /usr/bin/sudo /usr/bin/du -BM --max-depth=3 / 2>&1 | awk '$1+0 >= 100 {print}'
+      - name: Remove files batch 8
+        run: /usr/bin/sudo /usr/bin/rm -rf /usr/local/.ghcup /opt/google/chrome /var/lib/mysql /opt/az /usr/local/aws-sam-cli /usr/local/aws-cli
+#
+
+#      - name: Check big folders as candidate for deletion
+#        run: /usr/bin/sudo /usr/bin/du -BM --max-depth=3 / 2>&1 | awk '$1+0 >= 100 {print}'
 
 
       - name: Check disk space again
