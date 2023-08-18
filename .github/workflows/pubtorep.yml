@@ -14,12 +14,10 @@ jobs:
       - name: Check disk space
         run: /usr/bin/df -h
 
-      - name: Erase apt lists
+      - name: Remove files batch 0
         run: /usr/bin/sudo /usr/bin/rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-      - name: Remove unnecesary packages
+      - name: Remove files batch 0
         run: /usr/bin/sudo /usr/bin/apt-get autoremove -y && /usr/bin/sudo /usr/bin/apt-get clean
-
       - name: Remove files batch 1
         run: /usr/bin/sudo /usr/bin/rm -rf   /var/cache/apt
       - name: Remove files batch 1
@@ -38,9 +36,6 @@ jobs:
         run: /usr/bin/sudo /usr/bin/rm -rf   /var/log
       - name: Remove files batch 1
         run: /usr/bin/sudo /usr/bin/rm -rf /imagegeneration
-
-
-
       - name: Remove files batch 2
         run: /usr/bin/sudo /usr/bin/rm -rf /var/lib/gems
       - name: Remove files batch 2
@@ -77,8 +72,6 @@ jobs:
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/share/R
       - name: Remove files batch 2
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/share/i18n
-
-
       - name: Remove files batch 3
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/share/swift
       - name: Remove files batch 3
@@ -87,23 +80,18 @@ jobs:
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/local/sqlpackage
       - name: Remove files batch 3
         run: /usr/bin/sudo /usr/bin/rm -rf /opt/hostedtoolcache
-
       - name: Remove files batch 4
         run: /usr/bin/sudo /usr/bin/rm -rf /etc/skel
-
       - name: Remove files batch 5
         run: /usr/bin/sudo /usr/bin/rm -rf /opt/pipx
-
       - name: Remove files batch 6
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/local/julia1.9.2
       - name: Remove files batch 6
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/lib/firefox
       - name: Remove files batch 6
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/lib/llvm-12
-
       - name: Remove files batch 7
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/lib/llvm-13 /usr/lib/jvm /usr/lib/php /usr/lib/google-cloud-sdk /opt/microsoft
-
       - name: Remove files batch 8
         run: /usr/bin/sudo /usr/bin/rm -rf /usr/local/.ghcup /opt/google/chrome /var/lib/mysql /opt/az /usr/local/aws-sam-cli /usr/local/aws-cli
 #
